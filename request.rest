@@ -1,0 +1,19 @@
+POST  http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+    "name": "Ana Oliveira",
+    "email": "ana@gmail.com",
+    "password": "16515dasv",
+    "role":"normal"
+}
+
+###
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+
+{
+    "email": "ana@gmail.com",
+    "password": "16515dasv"    
+}
