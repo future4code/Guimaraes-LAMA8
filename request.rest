@@ -2,10 +2,10 @@ POST  http://localhost:3003/user/signup
 Content-Type: application/json
 
 {
-    "name": "Ana Oliveira",
-    "email": "ana@gmail.com",
-    "password": "16515dasv",
-    "role":"normal"
+    "name": "Ednaldo Pereira",
+    "email": "ednaldo@email.com",
+    "password": "123456",
+    "role":"admin"
 }
 
 ###
@@ -14,6 +14,19 @@ Content-Type: application/json
 
 
 {
-    "email": "ana@gmail.com",
-    "password": "16515dasv"    
+    "email": "lucas@email.com",
+    "password": "123456"    
+}
+
+###
+POST http://localhost:3003/show/book
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjlhZGU2ZWUwLTIxNjYtNGYxYS1hODIyLTQ2ZGZlN2JmYjUyYiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2Mjc3MzM5NiwiZXhwIjoxNjYyNzc2OTk2fQ.moeSMOihv-rA1d0mAKc92XqUe5D79tN_zEq10lRuQaE
+Content-Type: application/json
+
+
+{
+    "weekDay": "sabado",
+    "startTime": "16515dasv",
+    "endTime": 1,
+    "bandId": "1"
 }
