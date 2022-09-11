@@ -2,10 +2,10 @@ POST  http://localhost:3003/user/signup
 Content-Type: application/json
 
 {
-    "name": "Ana Oliveira",
-    "email": "ana@gmail.com",
+    "name": "Leonardo",
+    "email": "leo@gmail.com",
     "password": "16515dasv",
-    "role":"normal"
+    "role":"admin"
 }
 
 ###
@@ -14,6 +14,22 @@ Content-Type: application/json
 
 
 {
-    "email": "ana@gmail.com",
+    "email": "leo@gmail.com",
     "password": "16515dasv"    
 }
+
+###
+POST  http://localhost:3003/band/create
+Content-Type: application/json
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImUzOGUyNDJjLWMyNWUtNDg0MC1iMzc5LWQzZmUxNGI3MjhmZiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY2MjkxNjM2NSwiZXhwIjoxNjYyOTE2OTY1fQ._P4TMs9BwAS0vdKwq1JhJIQI_KOrP4mCHzjNN9upreo
+
+{
+    "name": "Leo",
+    "musicalGenre": "rock",
+    "representative": "Carl"
+    
+}
+
+
+###
+GET  http://localhost:3003/band/Leonardo
