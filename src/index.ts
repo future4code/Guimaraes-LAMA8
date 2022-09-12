@@ -6,7 +6,7 @@ import { userRouter } from "./routes/userRouter";
 
 app.use("/user", userRouter);
 
-wsapp.use("/show", showRouter)
+app.use("/show", showRouter)
 
 app.use("/band", bandRouter);
 

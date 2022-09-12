@@ -9,6 +9,16 @@ Content-Type: application/json
     "role":"admin"
 }
 
+###
+POST  http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+    "email": "leo@gmail.com",
+    "password": "16515dasv"
+    
+}
+
 
 ###
 POST http://localhost:3003/show/book
@@ -23,9 +33,7 @@ Content-Type: application/json
     "bandId": "1"
 }
 
-    "email": "leo@gmail.com",
-    "password": "16515dasv"    
-}
+  
 
 ###
 POST  http://localhost:3003/band/create
