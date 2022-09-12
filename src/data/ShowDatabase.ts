@@ -1,5 +1,5 @@
 import { ShowRepository } from "../business/ShowRepository";
-import { Show } from "../model/Show";
+import { Show, ShowData } from "../model/Show";
 import { BaseDatabase } from "./BaseDatabase";
 
 export class ShowDatabase extends BaseDatabase implements ShowRepository {
@@ -31,7 +31,7 @@ export class ShowDatabase extends BaseDatabase implements ShowRepository {
         
     }
 
-    public getShowByDay = async (day: string): Promise<Show[]> => {
+    public getShowByDay = async (day: string): Promise<ShowData[]> => {
         try {
             const result = await this.getConnection()
             .select('*')
