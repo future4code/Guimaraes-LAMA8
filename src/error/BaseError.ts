@@ -5,7 +5,7 @@ export abstract class BaseError extends Error {
   }
   export class InvalidUser extends BaseError{
     constructor(){
-      super( `"ID User: inform "name", "email","password" and "role"`,400)
+      super( `"Invalid User: inform "name", "email","password" and "role"`,400)
   }
   }
   export class InvalidEmail extends BaseError{
@@ -15,6 +15,16 @@ export abstract class BaseError extends Error {
   }
   export class InvalidUserLogin extends BaseError{
     constructor(){
-      super( `"ID User: inform  "email"and "password" `,400)
+      super( `"Invalid User: inform  "email"and "password" `,400)
+  }
+  }
+  export class InvalidBand extends BaseError{
+    constructor(){
+      super( `"Invalid Band: inform "name", "musicalGenre" and "representative"`,400)
+  }
+  }
+  export class Unauthorized extends BaseError{
+    constructor(){
+      super( `"unauthorized user : `,401)
   }
   }
