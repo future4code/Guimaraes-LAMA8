@@ -1,5 +1,5 @@
 import { CustomError } from "../error/CustomError";
-import { Show, ShowInputDTO } from "../model/Show";
+import { Show, ShowData, ShowInputDTO } from "../model/Show";
 import { IdGenerator } from "../services/IdGenerator";
 import { ShowRepository } from "./ShowRepository";
 import { Authenticator } from "../services/Authenticator";
@@ -16,8 +16,6 @@ export class ShowBusiness {
             if (!weekDay || !startTime || !endTime || !bandId) {
                 throw new CustomError(406,'Invalid Request, must inform "weekDay", "startTime", "endTime" and "bandId')
             }
-
-            new Authenticator().getData(token)
     
             let newWeekDay = weekDay.toLowerCase()
     
@@ -45,6 +43,18 @@ export class ShowBusiness {
                 throw new CustomError(406, 'End time can not be earlier than start time')
             }
 
+            const showsInDay = await this.ShowDatabase.getShowByDay(newWeekDay)
+
+            const startTimeShows = showsInDay.map(show => {
+                return show.start_time
+            })
+
+            if (startTimeShows.includes(startTime)) {
+                throw new CustomError(406, 'There is already a show booked at this time in this day')
+            }
+
+            new Authenticator().getData(token)
+
             const id = new IdGenerator().generate()
 
             const show: Show = {
@@ -64,7 +74,7 @@ export class ShowBusiness {
 
     }
 
-    public getShowbyDay = async (day: string): Promise<Show[]> => {
+    public getShowbyDay = async (day: string): Promise<ShowData[]> => {
         try {
             if (!day) {
                 throw new CustomError(406,'Invalid Request, must inform the "day"')

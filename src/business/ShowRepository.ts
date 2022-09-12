@@ -1,6 +1,6 @@
-import { Show } from "../model/Show"
+import { Show, ShowData } from "../model/Show"
 
 export interface ShowRepository {
     addShow (input: Show): Promise<void>
-    getShowByDay (day: string): Promise<Show[]>
+    getShowByDay (day: string): Promise<ShowData[]>
 }
