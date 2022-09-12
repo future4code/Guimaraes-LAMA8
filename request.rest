@@ -2,18 +2,27 @@ POST  http://localhost:3003/user/signup
 Content-Type: application/json
 
 {
+
     "name": "Leonardo",
     "email": "leo@gmail.com",
     "password": "16515dasv",
     "role":"admin"
 }
 
+
 ###
-POST http://localhost:3003/user/login
+POST http://localhost:3003/show/book
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjlhZGU2ZWUwLTIxNjYtNGYxYS1hODIyLTQ2ZGZlN2JmYjUyYiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTY2Mjc3MzM5NiwiZXhwIjoxNjYyNzc2OTk2fQ.moeSMOihv-rA1d0mAKc92XqUe5D79tN_zEq10lRuQaE
 Content-Type: application/json
 
 
 {
+    "weekDay": "sabado",
+    "startTime": "16515dasv",
+    "endTime": 1,
+    "bandId": "1"
+}
+
     "email": "leo@gmail.com",
     "password": "16515dasv"    
 }
@@ -33,3 +42,4 @@ Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImUzOGUyNDJjLWMyNWUtN
 
 ###
 GET  http://localhost:3003/band/Leonardo
+
